@@ -5,6 +5,7 @@ import (
 	"io"
 	"path"
 	"runtime"
+	"runtime/debug"
 	"strings"
 )
 
@@ -144,4 +145,9 @@ func funcname(name string) string {
 	name = name[i+1:]
 	i = strings.Index(name, ".")
 	return name[i+1:]
+}
+
+// Stack is for testing purposes.
+func Stack() string {
+	return string(debug.Stack())
 }
